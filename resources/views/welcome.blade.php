@@ -13,11 +13,27 @@
     <div class="container py-5">
         <header>
             <div class="d-flex justify-content-center">
-                <h1>Ciao Classe 110</h1>
+                <h1>Treni in partenza</h1>
             </div>
         </header>
-
-        <img src="{{ Vite::asset('resources/img/duck.jpg') }}" alt="">
+<ul>
+        @foreach ($trains as $train)
+           <li>
+            <h5>Treno</h5>
+            <p>Partenza: {{$train['stazione_di_partenza']}}</p>
+            <p>Arrivo: {{$train['stazione_di_arrivo']}}</p>
+            <p>Orario di Partenza: {{$train['orario_di_partenza']}}</p>
+            <p>Orario di arrivo: {{$train['orario_di_arrivo']}}</p>
+            <p>Codice Treno: {{$train['codice_treno']}}</p>
+            <p>Numero Carrozze: {{$train['numero_carrozze']}}</p>
+            <p>Il treno è in orario?: {{$train['in_orario']? 'si' : 'no' }}</p>
+            <p>Il treno è cancellato?: {{$train['cancellato']? 'si' : 'no' }}</p>
+            
+            
+           </li>
+       @endforeach
+</ul>
+       
     </div>
 
 </body>
