@@ -16,13 +16,15 @@
                 <h1>Treni in partenza</h1>
             </div>
         </header>
-<ul>
+        <ul class="d-flex flex-wrap">
         @foreach ($trains as $train)
-           <li>
+           <li class=" m-5">
             <h5>Treno</h5>
             <p>Partenza: {{$train['stazione_di_partenza']}}</p>
             <p>Arrivo: {{$train['stazione_di_arrivo']}}</p>
+            <p>Data di Partenza: {{$train['data_di_partenza']}}</p>
             <p>Orario di Partenza: {{$train['orario_di_partenza']}}</p>
+            <p>Data di arrivo: {{$train['data_di_arrivo']}}</p>
             <p>Orario di arrivo: {{$train['orario_di_arrivo']}}</p>
             <p>Codice Treno: {{$train['codice_treno']}}</p>
             <p>Numero Carrozze: {{$train['numero_carrozze']}}</p>
